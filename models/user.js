@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
+
 const userSchema = Schema(
   {
     name: { type: String, required: true },
@@ -14,7 +15,7 @@ const userSchema = Schema(
       unique: true,
     },
   },
-  { versionKey: false, timeStamps: true }
+  { versionKey: false, timestamps: true }
 );
 
 const joiRegisterSchema = Joi.object({
@@ -30,4 +31,4 @@ const joiLoginSchema = Joi.object({
 
 const User = model("user", userSchema);
 
-module.exports = { User, joiRegisterSchema, joiRegisterSchema };
+module.exports = { User, joiRegisterSchema, joiLoginSchema };
