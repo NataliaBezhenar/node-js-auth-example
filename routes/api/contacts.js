@@ -2,13 +2,13 @@ const express = require("express");
 
 const router = express.Router();
 
-const { controllsWrapper } = require("../../middlewares");
+const { auth, controllsWrapper } = require("../../middlewares");
 const { contacts: ctrl } = require("../../controllers");
 
 // get all contacts
-router.get("/", controllsWrapper(ctrl.getAll));
+router.get("/", auth, controllsWrapper(ctrl.getAll));
 
 // add contact
-router.post("/", controllsWrapper(ctrl.add));
+router.post("/", auth, controllsWrapper(ctrl.add));
 
 module.exports = router;
