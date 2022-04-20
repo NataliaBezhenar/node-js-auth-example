@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
+const gravatar = require("gravatar");
 
 const userSchema = Schema(
   {
@@ -17,6 +18,13 @@ const userSchema = Schema(
     token: {
       type: String,
       default: null,
+    },
+    avatar: {
+      type: String,
+      required: true,
+      // default: function () {
+      //   return gravatar.url(this.email, { s: "250" }, true);
+      // },
     },
   },
   { versionKey: false, timestamps: true }
