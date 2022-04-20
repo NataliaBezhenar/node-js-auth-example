@@ -19,7 +19,7 @@ const userSchema = Schema(
       type: String,
       default: null,
     },
-    avatar: {
+    avatarUrl: {
       type: String,
       required: true,
       // default: function () {

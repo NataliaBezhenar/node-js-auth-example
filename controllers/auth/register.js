@@ -15,7 +15,7 @@ const register = async (req, res) => {
     name,
     email,
     password: hashPassword,
-    avatar: avatarURL,
+    avatarURL,
   });
   res.status(201).json({
     status: "success",
